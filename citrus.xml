@@ -436,18 +436,12 @@
     <float name="device_head_sar">0.868</float>
     <!-- device body sar value -->
     <float name="device_body_sar">0.865</float>
-    <!--These region support face unlock-->
-    <string-array name="support_face_unlock_region_dom">
-    <item>ALL</item>
-    </string-array>
+    <!-- whether support multi face input -->
+    <bool name="support_multi_face_input_global">true</bool>
     <!--These region support face unlock-->
     <string-array name="support_face_unlock_region_global">
     <item>ALL</item>
     </string-array>
-    <!-- whether support multi face input -->
-    <bool name="support_multi_face_input_global">true</bool>
-    <!-- whether support multi face input -->
-    <bool name="support_multi_face_input">true</bool>
     <!-- whether support paper eyecare-->
     <bool name="support_paper_eyecare">false</bool>
     <!-- default color temp for paper eyecare -->
