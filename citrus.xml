@@ -8,6 +8,8 @@
     <bool name="is_hongmi">true</bool>
     <!--whether the device is redmi-->
     <bool name="is_redmi">true</bool>
+    <!--whether the device support simple launcher-->
+    <bool name="support_simple_launcher">false</bool>
     <!--whether the device support alpha optimized-->
     <bool name="support_alpha_optimized">true</bool>
     <!--whether the device supports torch-->
@@ -49,7 +51,7 @@
     <!--whether the device supports internal sdcard-->
     <bool name="support_internal_sdcard">false</bool>
     <!--whether the device supports power mode-->
-    <bool name="support_power_mode">false</bool>
+    <bool name="support_power_mode">true</bool>
     <!--whether the device supports dolby-->
     <bool name="support_dolby">false</bool>
     <!--which screen effect options should be show-->
@@ -63,7 +65,7 @@
     <!--whether the device supports media feedback-->
     <bool name="support_media_feedback">false</bool>
     <!--whether the device supports phone call noise suppression-->
-    <bool name="support_phone_call_noise_suppression">false</bool>
+    <bool name="support_phone_call_noise_suppression">true</bool>
     <!--whether the device supports touch sensitive-->
     <bool name="support_touch_sensitive">false</bool>
     <!--whether the device supports broadcom wapi-->
@@ -74,6 +76,8 @@
     <bool name="support_headset">true</bool>
     <!--whether the device supports nvdia wifi display-->
     <bool name="support_nvdia_wifi_display">false</bool>
+    <!-- whether support miplay privacy cast(wifi display)-->
+    <bool name="support_miplay_cast_privacy">true</bool>
     <!--whether the device supports eap sim-->
     <bool name="support_eap_sim">true</bool>
     <!--whether the device supports screen optimize-->
@@ -89,7 +93,7 @@
     <!--whether the device support hall sensor-->
     <bool name="support_hall_sensor">false</bool>
     <!--whether the device supports hifi-->
-    <bool name="support_hifi">false</bool>
+    <bool name="support_hifi">true</bool>
     <!--whether the device supports agps parameters-->
     <bool name="support_agps_paras">true</bool>
     <!--whether the device supports agps roaming-->
@@ -97,8 +101,6 @@
     <!-- Support Android Flashlight Controller -->
     <bool name="support_android_flashlight">true</bool>
     <!--whether the device supports IR-->
-    <!-- Support Dual Gps-->
-    <bool name="support_dual_gps">true</bool>
     <bool name="support_ir">true</bool>
     <!-- whether the device supports app hiding-->
     <bool name="support_app_hiding">true</bool>
@@ -119,7 +121,7 @@
     <!--whether support skin beauty in camera-->
     <bool name="support_camera_skin_beauty">true</bool>
     <!--whether support age detection in camera-->
-    <bool name="support_camera_age_detection">true</bool>
+    <bool name="support_camera_age_detection">false</bool>
     <!--whether support record location in camera-->
     <bool name="support_camera_record_location">true</bool>
     <!--whether support time watermark in camera-->
@@ -187,7 +189,7 @@
     <!--whether support tiltshift  in camera-->
     <bool name="support_camera_tilt_shift">true</bool>
     <!--whether support magic mirror in camera-->
-    <bool name="support_camera_magic_mirror">true</bool>
+    <bool name="support_camera_magic_mirror">false</bool>
     <!--whether support groupshot mode  in camera-->
     <bool name="support_camera_groupshot">true</bool>
     <!--whether support snap with screen off  in camera-->
@@ -197,7 +199,13 @@
     <!-- whether support double tap to wake up device -->
     <bool name="support_gesture_wakeup">true</bool>
     <!-- whether support always on -->
-    <bool name="support_aod">false</bool>
+    <bool name="support_aod">true</bool>
+    <!-- whether support keycode_goto_dismiss -->
+    <bool name="aod_support_keycode_goto_dismiss">true</bool>
+    <!-- whether video screen -->
+    <bool name="is_video_screen">true</bool>
+    <!-- whether only support keycode goto -->
+    <bool name="is_only_support_keycode_goto">true</bool>
     <!-- whether support edge handgrip -->
     <bool name="support_edge_handgrip">false</bool>
     <!-- whether the device app permission detail show in provision-->
@@ -205,7 +213,6 @@
     <!--whether support pre-installed application-->
     <bool name="support_pre_installed_application">true</bool>
     <!--wheater support validate device when syste upadte -->
-    <bool name="support_ota_validate">true</bool>
     <!--whether show basic info items-->
     <bool name="support_show_basic_items">true</bool>
     <!--whether show my device-->
@@ -215,9 +222,8 @@
     <!--wheater support show credentials-->
     <bool name="support_credentials">true</bool>
     <!--whether support main show XiaoAi-->
-    <bool name="support_main_xiaoai">true</bool>
     <!--battery capacity typ of the device-->
-    <string name="battery_capacity_typ">6000</string>
+    <string name="battery_capacity_typ">5020</string>
     <!--the vendor feature, it's value may be qcom,mediatek,leadcore or nvidia-->
     <string name="vendor">qcom</string>
     <!--release time for the device, should be an unix timestamp-->
@@ -257,16 +263,17 @@
     <string-array name="fp_nav_event_name_list">
         <item>uinput-fpc</item>
         <item>uinput-goodix</item>
-        <item>uinput-cdfinger</item>
-        <item>uinput-focal</item>
+        <item>uinput-fortsense</item>
     </string-array>
     <bool name="support_tap_fingerprint_sensor_to_home">false</bool>
     <!-- finger for alipay. default do not need config. -->
-    <string name="finger_alipay_ifaa_model">Xiaomi-citrus</string>
+    <string name="finger_alipay_ifaa_model">Xiaomi-phoenix</string>
     <!-- type of soter finger pay, config by owner of soter -->
     <integer name="type_soter_finger_pay">2</integer>
     <!-- finger record, config by owner -->
     <integer name="type_mqs_finger_record">3</integer>
+    <!-- wheter the device support widevine l1, 1: support, 2: ota_support -->
+    <integer name="support_widevine_l1">1</integer>
     <!--wheater the device supports persist screen color in driver-->
     <bool name="support_screen_color_persist">true</bool>
     <!--cpu combination -->
@@ -297,16 +304,17 @@
     <string-array name="camera_aux_package_list">
         <item>org.codeaurora.snapcam</item>
         <item>com.android.camera</item>
+        <item>com.xiaomi.factory.mmi</item>
+        <item>com.xiaomi.cameratest</item>
         <item>com.miui.cit</item>
         <item>com.qualcomm.qti.qmmi</item>
         <item>com.android.keyguard</item>
         <item>com.android.systemui</item>
         <item>com.phonetest.application</item>
         <item>com.phonetest.application.test</item>
-        <item>com.ss.android.ugc.aweme</item>
-        <item>com.miui.cameratest</item>
-        <item>com.longcheertel.AutoTest</item>
         <item>com.xiaomi.cameratools</item>
+        <item>com.miui.cameratest</item>
+        <item>com.xiaomi.runin</item>
     </string-array>
     <!--still beautify value for 3rd party call-->
     <string name="extra_still_beautify_value">i:2</string>
@@ -320,7 +328,6 @@
     <!-- whether CN hardware can flash Global rom -->
     <bool name="enable_flash_global">true</bool>
     <!-- Support Sign Verify In Cust Partition-->
-    <bool name="support_sign_verify_in_cust">true</bool>
     <!--Add for the system data-app which could uninstall by user-->
     <string-array name="system_data_packagename_list">
         <item>com.xiaomi.pass</item>
@@ -365,12 +372,14 @@
         <item>/system/data-app/MiuiDriveMode/MiuiDriveMode.apk</item>
         <item>/system/data-app/SmartTravel/SmartTravel.apk</item>
     </string-array>
+    <!-- Whether support partial screenshot -->
+    <bool name="is_support_partial_screenshot">true</bool>
     <!--whether surpport paper mode animation-->
     <bool name="support_papermode_animation">true</bool>
     <!--whether paper mode and screen effect is compatible-->
     <bool name="is_compatible_paper_and_screen_effect">true</bool>
     <!--whether support optical zoom in camera-->
-    <bool name="is_support_optical_zoom">true</bool>
+    <bool name="is_support_optical_zoom">false</bool>
     <!--whether support portrait in camera-->
     <bool name="is_support_portrait">true</bool>
     <!--whether taking legacy face beauty in camera-->
@@ -399,62 +408,77 @@
     <bool name="support_realtime_manual_exposure_time">true</bool>
     <!--whether sensor_has_latency-->
     <bool name="sensor_has_latency">true</bool>
-    <!-- whether disable always discoverable -->
-    <bool name="support_hide_discoverable">true</bool>
+    <!-- whether support touch gamemode -->
+    <bool name="support_touchfeature_gamemode">true</bool>
+    <!-- whether support LHDC codec offload -->
+    <bool name="support_lhdc">false</bool>
+    <!-- whether support a2dp latency-->
+    <bool name="support_a2dp_latency">true</bool>
     <!-- whether support bluetooth fast startup -->
     <bool name="support_bluetooth_boost">true</bool>
     <string name="bluetooth_boost_value">0x000011C0</string>
     <!-- whether support fast connect bluetooth device -->
     <bool name="support_bluetooth_fast_connect">true</bool>
-    <!-- whether support ai task button -->
-    <bool name="support_ai_task">false</bool>
-    <!-- whether support touch gamemode -->
-    <bool name="support_touchfeature_gamemode">false</bool>
-    <!-- whether support display gamemode -->
-    <bool name="support_displayfeature_gamemode">false</bool>
+    <!-- whether support bluetooth cloud data -->
+    <bool name="support_bluetooth_cloud_data">true</bool>
+    <!-- whether support fast connect for blackshark -->
+    <bool name="support_blackshark_fast_connect">true</bool>
     <!-- whether support wlan low latency mode -->
     <bool name="support_wifi_low_latency_mode">true</bool>
+    <!-- whether support ai task button -->
+    <bool name="support_ai_task">false</bool>
+    <!-- whether support display gamemode -->
+    <bool name="support_displayfeature_gamemode">true</bool>
+    <!-- whether support video box display effect -->
+    <bool name="support_videobox_display_effect">true</bool>
     <!-- whether support extreme mode only support perseus-->
     <bool name="support_extreme_battery_saver">false</bool>
-    <!-- whether support multi face input -->
-    <bool name="support_multi_face_input_global">true</bool>
-    <!-- whether support ifaa 2dfa feature -->
-    <integer name="ifaa_2dfa_support">0</integer>
-    <!-- whether support dc backlight -->
-    <bool name="support_dc_backlight">false</bool>
-    <!-- whether support video box display effect -->
-    <bool name="support_videobox_display_effect">false</bool>
-    <!-- support video toolbox -->
-    <bool name="is_support_video_tool_box">true</bool>
-    <!-- Support ARCore, This feature is subjected to change if google defines a standard feature.-->
-    <bool name="support_ar_core">true</bool>
-    <!-- whether support_screen_on_delayed -->
-    <bool name="support_screen_on_delayed">true</bool>
-    <!-- whether support hangup while screen turnning off -->
-    <bool name="support_hangup_while_screen_off">true</bool>
-    <!-- device head sar value -->
-    <float name="device_head_sar">0.868</float>
-    <!-- device body sar value -->
-    <float name="device_body_sar">0.865</float>
-    <!-- whether support multi face input -->
-    <bool name="support_multi_face_input_global">true</bool>
+    <!--These region support face unlock-->
+    <string-array name="support_face_unlock_region_dom">
+    <item>ALL</item>
+    </string-array>
     <!--These region support face unlock-->
     <string-array name="support_face_unlock_region_global">
     <item>ALL</item>
     </string-array>
+    <!-- whether support multi face input -->
+    <bool name="support_multi_face_input">true</bool>
+    <bool name="support_multi_face_input_global">true</bool>
+    <!-- whether support_screen_on_delayed -->
+    <bool name="support_screen_on_delayed">true</bool>
+    <!-- device head sar value -->
+    <float name="device_head_sar">1.070</float>
+    <!-- device body sar value -->
+    <float name="device_body_sar">0.723</float>
+    <!-- whether support fps change -->
+    <integer-array name="fpsList">
+        <item>120</item>
+        <item>60</item>
+    </integer-array>
+    <integer name="defaultFps">60</integer>
+    <bool name="support_display_expert_mode">true</bool>
+    <bool name="support_game_mi_time">true</bool>
+    <bool name="support_screen_enhance_engine">true</bool>
+    <bool name="support_truetone">true</bool>
+    <bool name="support_smart_eyecare">true</bool>
+    <bool name="config_sunlight_mode_available">true</bool>
+    <!-- whether support hangup while screen turnning off -->
+    <bool name="support_hangup_while_screen_off">true</bool>
     <!-- whether support paper eyecare-->
-    <bool name="support_paper_eyecare">false</bool>
+    <bool name="support_paper_eyecare">true</bool>
     <!-- default color temp for paper eyecare -->
     <float name="paper_eyecare_default_value">91.0</float>
     <!-- default texture for paper eyecare -->
-    <integer name="paper_eyecare_default_texture">18</integer>
+    <integer name="paper_eyecare_default_texture">13</integer>
     <!-- texture min value for paper eyecare -->
     <integer name="paper_eyecare_min_texture">0</integer>
     <!-- texture max value for paper eyecare -->
-    <integer name="paper_eyecare_max_texture">35</integer>
-    <!--Ignore installing the app in the current and below ram-->
-    <string-array name="ignored_apps">
-        <item>4,com.xiaomi.joyose</item>
-        <item>4,com.xiaomi.drivemode</item>
-    </string-array>
+    <integer name="paper_eyecare_max_texture">25</integer>
+    <!-- is support fingerprint tap-->
+    <bool name="is_support_fingerprint_tap">true</bool>
+    <!-- Configuration for GestureShortcutSettings page -->
+    <bool name="config_with_gesture_shortcut_settings">true</bool>
+    <!-- Whether support decrease brightness for specific apps -->
+    <bool name="support_decrease_brightness_spec_app">true</bool>
+    <bool name="remove_vgpaper">true</bool>
 </features>
